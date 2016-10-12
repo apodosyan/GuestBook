@@ -18,12 +18,12 @@ class Guestbook extends CI_Controller {
         $rules = $this->guestbook_model->set_rules_for_guestbook();
         $this->form_validation->set_rules($rules);
         if($this->form_validation->run()) {
-            $data = [
+            $data = array(
                 'name' =>  $this->input->post('name', true),
                 'message' =>  $this->input->post('message', true),
                 'email' =>  $this->input->post('email', true),
                 'ip' => $this->input->ip_address()
-            ];
+            );
             $this->guestbook_model->add_message($data);
             $this->session->set_flashdata('message_added', true);
             redirect(base_url());

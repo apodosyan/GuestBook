@@ -8,7 +8,7 @@ class Pagination_model extends CI_Model
     }
 
     public function pagination(){
-        $config = [];
+        $config = array();
         $config['per_page'] = $this->config->item('per_page');
         $config["uri_segment"] = 3;
         $config['page_query_string'] = true;

@@ -33,12 +33,12 @@ class Admin_1000 extends CI_Controller {
         $rules = $this->admin_model->set_rules_for_new_admin();
         $this->form_validation->set_rules($rules);
         if ($this->form_validation->run()) {
-            $data = [
+            $data = array(
                 'username' => $this->input->post('login', true),
                 'email' => $this->input->post('email', true),
                 'password' => $this->input->post('password', true),
                 'ip' => $this->input->ip_address()
-            ];
+            );
             $this->admin_model->add_admin($data);
             $this->session->set_flashdata('Admin_added', true);
             redirect(site_url('admin-1000/index'));
@@ -58,15 +58,14 @@ class Admin_1000 extends CI_Controller {
         if(!$this->admin_model->check_admin_exist($admin_id))
             show_404();
         $config = $this->admin_model->set_rules_for_new_admin();
-        unset($config[0]);
         $this->form_validation->set_rules($config);
         if ($this->form_validation->run()) {
-            $data = [
+            $data = array(
                 'username' => $this->input->post('login', true),
                 'email' => $this->input->post('email', true),
                 'password' => $this->input->post('password', true),
                 'ip' => $this->input->ip_address()
-            ];
+            );
             $this->admin_model->update_admin($admin_id, $data);
             $this->session->set_flashdata('admin_updated', true);
             redirect(site_url('admin-1000/index'));
@@ -81,7 +80,7 @@ class Admin_1000 extends CI_Controller {
     {
         $this->load->library('pagination');
         $this->load->model('pagination_model');
-        $where = [
+        $where = array(
             'id' =>  $this->input->get('id', true),
             'name' =>  $this->input->get('name', true),
             'message' =>  $this->input->get('message', true),
@@ -89,7 +88,7 @@ class Admin_1000 extends CI_Controller {
             'added_from' =>  $this->input->get('added_from', true),
             'added_to' =>  $this->input->get('added_to', true),
             'ip' =>  $this->input->get('ip', true),
-        ];
+        );
         $config = $this->pagination_model->pagination();
         $url = base_url(uri_string()).'/?'.$_SERVER['QUERY_STRING'];
         if(strrpos($url, '&per_page')) {
@@ -115,14 +114,13 @@ class Admin_1000 extends CI_Controller {
             show_404();
         $this->load->model('guestbook_model');
         $config = $this->guestbook_model->set_rules_for_guestbook();
-        unset($config[0]);
         $this->form_validation->set_rules($config);
         if ($this->form_validation->run()) {
-            $data = [
+            $data = array(
                 'name' =>  $this->input->post('name', true),
                 'message' =>  $this->input->post('message', true),
                 'email' =>  $this->input->post('email', true),
-            ];
+            );
             $this->admin_model->update_message($message_id, $data);
             $this->session->set_flashdata('message_updated', true);
             redirect(site_url('admin-1000/show_messages'));
