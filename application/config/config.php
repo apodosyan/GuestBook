@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://work17.linuxserv.net';
+$config['base_url'] = 'http://54.244.191.61/';
 
 /*
 |--------------------------------------------------------------------------
