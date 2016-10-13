@@ -114,15 +114,11 @@
                             </div>
                         </div>
                         <input type="hidden" class="parent" name="parent">
-
                 </div>
-
             </div>
-            <div class="form-group">
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-default">Add message</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default">Add message</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
 
