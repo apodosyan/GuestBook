@@ -74,8 +74,8 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'ec2-54-191-186-12.us-west-2.compute.amazonaws.com',
-	'hostname' => '54.191.186.12',
+	'dsn'	=> '',
+	'hostname' => 'db-master1',
 	'username' => 'root',
 	'password' => 'T-Rad1',
 	'database' => 'TEST-HS17',
