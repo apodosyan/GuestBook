@@ -25,7 +25,7 @@
     <div class="form-group">
         <div class="col-md-9 col-md-offset-3">
             <div id="messages"></div>
-            <div class=error><?=validation_errors()?></div>
+            <div class=error><?php echo validation_errors()?></div>
         </div>
     </div>
     <div class="form-group">

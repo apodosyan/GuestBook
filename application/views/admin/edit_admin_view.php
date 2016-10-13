@@ -7,13 +7,13 @@
     <div class="form-group">
         <label class="col-md-3 control-label">Login</label>
         <div class="col-md-6">
-            <input type="text" class="form-control" name="login" value="<?=$admin['username']?>"  />
+            <input type="text" class="form-control" name="login" value="<?php echo $admin['username']?>"  />
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-3 control-label">Email</label>
         <div class="col-md-6">
-            <input type="text" class="form-control" name="email" value="<?=$admin['email']?>"  />
+            <input type="text" class="form-control" name="email" value="<?php echo $admin['email']?>"  />
         </div>
     </div>
     <div class="form-group">
@@ -26,7 +26,7 @@
     <div class="form-group">
         <div class="col-md-9 col-md-offset-3">
             <div id="messages"></div>
-            <div class=error><?=validation_errors()?></div>
+            <div class=error><?php echo validation_errors()?></div>
         </div>
     </div>
     <div class="form-group">

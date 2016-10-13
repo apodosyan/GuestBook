@@ -16,7 +16,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?=base_url()?>">GuestBook</a>
+            <a class="navbar-brand" href="<?php echo base_url()?>">GuestBook</a>
         </div>
 
     </div>

@@ -19,14 +19,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?=site_url('admin-1000')?>">GuestBook Admin section</a>
+            <a class="navbar-brand" href="<?php echo site_url('admin-1000')?>">GuestBook Admin section</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <?php if($this->session->userdata('admin_logged')):?>
                 <ul class="nav navbar-nav">
-                    <li><a href="<?=site_url('admin-1000/index'); ?>">Administrators</a></li>
-                    <li><a href="<?=site_url('admin-1000/show_messages'); ?>">Messages</a></li>
-                    <li><a href="<?=site_url('admin_login/logout'); ?>">Logout</a></li>
+                    <li><a href="<?php echo site_url('admin-1000/index'); ?>">Administrators</a></li>
+                    <li><a href="<?php echo site_url('admin-1000/show_messages'); ?>">Messages</a></li>
+                    <li><a href="<?php echo site_url('admin_login/logout'); ?>">Logout</a></li>
                 </ul>
 
             <?php endif?>
