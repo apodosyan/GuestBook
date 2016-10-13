@@ -21,3 +21,13 @@
 .add_admin:hover{
     cursor: pointer;
 }
+
+.message_reply_div{
+    padding: 10px;
+    color: black;
+    background-color: #ADD8E6;
+    border-top: 1px solid silver;
+    border: 1px solid silver;
+    border-radius: 10px;
+    margin-top: 5px;
+}

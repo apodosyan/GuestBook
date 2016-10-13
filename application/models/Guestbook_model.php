@@ -50,13 +50,18 @@ class Guestbook_model extends CI_Model
      */
     public function all_messages($limit, $start) {
         $this->db->limit($limit, $start);
-        $query = $this->db->order_by('id', 'desc')->get('guestbook');
+        $query = $this->db->where('parent_id', 0)->order_by('id', 'desc')->get('guestbook');
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-
     }
 
+    public function reply_messages(){
+        $query = $this->db->where('parent_id !=', 0)->order_by('id', 'desc')->get('guestbook');
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        }
+    }
     /**
      * @return mixed
      * Get all messages from guestbook table

@@ -22,7 +22,8 @@ class Guestbook extends CI_Controller {
                 'name' =>  $this->input->post('name', true),
                 'message' =>  $this->input->post('message', true),
                 'email' =>  $this->input->post('email', true),
-                'ip' => $this->input->ip_address()
+                'parent_id' =>  $this->input->post('parent', true),
+                'ip' => $this->input->ip_address(),
             );
             $this->guestbook_model->add_message($data);
             $this->session->set_flashdata('message_added', true);
@@ -38,7 +39,8 @@ class Guestbook extends CI_Controller {
 
         $page = $this->input->get('per_page');
         $messages = $this->guestbook_model->all_messages($config["per_page"], $page);
+        $reply_messages = $this->guestbook_model->reply_messages();
         $pagination = $this->pagination->create_links();
-        $this->view_load->view('guestbook_view', compact('messages', 'pagination'));
+        $this->view_load->view('guestbook_view', compact('messages', 'reply_messages', 'pagination'));
     }
 }
